@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <DockerPublishLocally>False</DockerPublishLocally>
+    <ProjectGuid>e991a65d-5d5e-401e-8e39-2a1ef4fe3d8e</ProjectGuid>
+    <!-- <DockerLaunchAction>LaunchBrowser</DockerLaunchAction> -->
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
+    <DockerServiceName>pinepaste.api</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../docker/docker-compose.override.yml">
+      <DependentUpon>../docker/docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="../docker/docker-compose.yml" />
+    <None Include="../docker/.dockerignore" />
+  </ItemGroup>
+</Project>
