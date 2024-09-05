@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PinePaste.Domain.Entities;
 
 namespace PinePaste.Infrastructure.Data;
@@ -11,6 +11,12 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Seed data with two initial pastes
+        modelBuilder.Entity<Paste>().HasData(
+            new Paste("This is the first seeded paste.", DateTime.MaxValue),
+            new Paste("This is the second seeded paste.", DateTime.MaxValue)
+        );
+
         base.OnModelCreating(modelBuilder);
     }
 }
