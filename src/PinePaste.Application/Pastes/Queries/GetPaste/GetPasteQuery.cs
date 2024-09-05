@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using PinePaste.Domain.Entities;
+using PinePaste.Domain.ValueObjects;
 
 namespace PinePaste.Application.Pastes.Queries.GetPaste;
 
-public class GetPasteQuery(Guid pasteId) : IRequest<Paste>
+public class GetPasteQuery(PasteId pasteId) : IRequest<Paste>
 {
-    public Guid PasteId { get; set; } = pasteId;
+    public PasteId PasteId { get; set; } = pasteId;
 }

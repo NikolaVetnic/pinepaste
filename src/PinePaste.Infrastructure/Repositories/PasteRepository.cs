@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PinePaste.Core.Interfaces;
 using PinePaste.Domain.Entities;
+using PinePaste.Domain.ValueObjects;
 using PinePaste.Infrastructure.Data;
 
 namespace PinePaste.Infrastructure.Repositories;
@@ -12,7 +13,7 @@ public class PasteRepository(ApplicationDbContext context) : IPasteRepository
         return await context.Pastes.ToListAsync();  // Implementation for retrieving all pastes
     }
 
-    public async Task<Paste?> GetByIdAsync(Guid id)
+    public async Task<Paste?> GetByIdAsync(PasteId id)
     {
         return await context.Pastes.FindAsync(id);
     }

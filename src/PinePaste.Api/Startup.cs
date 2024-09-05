@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PinePaste.Api.ModelBinders;
 using PinePaste.Application.Pastes.Commands.CreatePaste;
 using PinePaste.Core.Interfaces;
+using PinePaste.Infrastructure.Converters;
 using PinePaste.Infrastructure.Data;
 using PinePaste.Infrastructure.Repositories;
 
@@ -20,6 +21,10 @@ public class Startup
         services.AddControllers(options =>
         {
             options.ModelBinderProviders.Insert(0, new GetPasteQueryModelBinderProvider());
+        })
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.Converters.Add(new PasteIdConverter());
         });
 
         // Configure in-memory database

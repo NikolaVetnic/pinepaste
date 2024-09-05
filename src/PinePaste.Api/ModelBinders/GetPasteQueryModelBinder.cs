@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PinePaste.Application.Pastes.Queries.GetPaste;
+using PinePaste.Domain.ValueObjects;
 
 namespace PinePaste.Api.ModelBinders;
 
@@ -14,7 +15,7 @@ public class GetPasteQueryModelBinder : IModelBinder
         }
 
         var value = valueProviderResult.FirstValue;
-        if (Guid.TryParse(value, out var pasteId))
+        if (PasteId.TryParse(value, out var pasteId))
         {
             bindingContext.Result = ModelBindingResult.Success(new GetPasteQuery(pasteId));
         }

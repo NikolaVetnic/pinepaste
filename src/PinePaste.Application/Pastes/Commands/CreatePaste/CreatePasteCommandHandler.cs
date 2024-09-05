@@ -1,12 +1,13 @@
 ﻿using MediatR;
 using PinePaste.Core.Interfaces;
 using PinePaste.Domain.Entities;
+using PinePaste.Domain.ValueObjects;
 
 namespace PinePaste.Application.Pastes.Commands.CreatePaste;
 
-public class CreatePasteCommandHandler(IPasteRepository pasteRepository) : IRequestHandler<CreatePasteCommand, Guid>
+public class CreatePasteCommandHandler(IPasteRepository pasteRepository) : IRequestHandler<CreatePasteCommand, PasteId>
 {
-    public async Task<Guid> Handle(CreatePasteCommand request, CancellationToken cancellationToken)
+    public async Task<PasteId> Handle(CreatePasteCommand request, CancellationToken cancellationToken)
     {
         var paste = new Paste(request.Content, request.ExpiryDate);
         paste.Validate();
