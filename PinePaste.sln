@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Infrastructure", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CBE0CBC6-D69C-4885-AFE1-7E799AA84CCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Tests", "test\PinePaste.Tests\PinePaste.Tests.csproj", "{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Tests.Integration", "test\PinePaste.Tests.Integration\PinePaste.Tests.Integration.csproj", "{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker\docker-compose.dcproj", "{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}"
 EndProject
