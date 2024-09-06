@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Domain", "src\Pin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Infrastructure", "src\PinePaste.Infrastructure\PinePaste.Infrastructure.csproj", "{82215C31-4070-494B-81C3-ACD74EF31E59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CBE0CBC6-D69C-4885-AFE1-7E799AA84CCA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinePaste.Tests.Integration", "test\PinePaste.Tests.Integration\PinePaste.Tests.Integration.csproj", "{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker\docker-compose.dcproj", "{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AA303183-8BBE-4F28-9A28-A2459C0E2D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinePaste.Tests.Integration", "test\PinePaste.Tests.Integration\PinePaste.Tests.Integration.csproj", "{30E0D579-ECDE-4C62-9BE0-581563E42A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +47,14 @@ Global
 		{82215C31-4070-494B-81C3-ACD74EF31E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82215C31-4070-494B-81C3-ACD74EF31E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82215C31-4070-494B-81C3-ACD74EF31E59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E991A65D-5D5E-401E-8E39-2A1EF4FE3D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E0D579-ECDE-4C62-9BE0-581563E42A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E0D579-ECDE-4C62-9BE0-581563E42A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E0D579-ECDE-4C62-9BE0-581563E42A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E0D579-ECDE-4C62-9BE0-581563E42A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +65,6 @@ Global
 		{F8F484DB-631F-4CC2-8C3A-5E6BAB56E663} = {C00D76E3-277D-4AF7-A30A-DA34D2086790}
 		{9DD1E5FC-4CB7-4DA7-ABEA-9B822585D422} = {C00D76E3-277D-4AF7-A30A-DA34D2086790}
 		{82215C31-4070-494B-81C3-ACD74EF31E59} = {C00D76E3-277D-4AF7-A30A-DA34D2086790}
-		{4C032FD1-4CAA-4922-8ABC-A724A0AFA6D9} = {CBE0CBC6-D69C-4885-AFE1-7E799AA84CCA}
+		{30E0D579-ECDE-4C62-9BE0-581563E42A4A} = {AA303183-8BBE-4F28-9A28-A2459C0E2D90}
 	EndGlobalSection
 EndGlobal
