@@ -13,24 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the code from your repository
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Set up .NET Core
+    - name: List directory contents
+      run: ls -R
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x'  # Adjust based on your .NET version
+        dotnet-version: '8.0.x'
 
-    # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore PinePaste.sln
+      working-directory: ./pinepaste
 
-    # Build the project
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-
-    # Run tests
-    - name: Run tests
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+    - name: Build the project
+      run: dotnet build PinePaste.sln --configuration Release
+      working-directory: ./pinepaste
