@@ -21,8 +21,8 @@ jobs:
     - name: List directory contents
       run: ls -R
 
-    # - name: Restore dependencies
-    #   run: dotnet restore PinePaste.sln
+    - name: Restore dependencies
+      run: dotnet restore PinePaste.sln
 
     # - name: Build
     #   run: dotnet build PinePaste.sln --no-restore
