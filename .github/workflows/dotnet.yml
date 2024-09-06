@@ -24,8 +24,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore PinePaste.sln
 
-    # - name: Build
-    #   run: dotnet build PinePaste.sln --no-restore
+    - name: Build
+      run: dotnet build PinePaste.sln --no-restore
 
-    # - name: Test
-    #   run: dotnet test PinePaste.sln --no-build --verbosity normal
+    - name: Test
+      run: dotnet test PinePaste.sln --no-build --verbosity normal
