@@ -10,7 +10,7 @@ public class PasteRepository(ApplicationDbContext context) : IPasteRepository
 {
     public async Task<IEnumerable<Paste>> GetAllAsync()
     {
-        return await context.Pastes.ToListAsync();  // Implementation for retrieving all pastes
+        return await context.Pastes.ToListAsync();
     }
 
     public async Task<Paste?> GetByIdAsync(PasteId id)

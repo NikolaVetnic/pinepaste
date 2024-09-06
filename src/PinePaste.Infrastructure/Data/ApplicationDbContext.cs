@@ -11,24 +11,31 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Configure PasteId to be treated as a string in the database
+        ConfigurePasteIdConversion(modelBuilder);
+        SeedPastes(modelBuilder);
+
+        base.OnModelCreating(modelBuilder);
+    }
+
+    private static void ConfigurePasteIdConversion(ModelBuilder modelBuilder)
+    {
         var pasteIdConverter = new ValueConverter<PasteId, string>(
-            v => v.Value,            // Convert PasteId to string when saving
-            v => PasteId.Parse(v));    // Convert string back to PasteId when querying
+            v => v.Value,
+            v => PasteId.Parse(v));
 
         modelBuilder.Entity<Paste>()
-            .HasKey(p => p.Id);   // Set PasteId as the primary key
+            .HasKey(p => p.Id);
 
         modelBuilder.Entity<Paste>()
             .Property(p => p.Id)
             .HasConversion(pasteIdConverter);
+    }
 
-        // Seed data with two initial pastes
+    private static void SeedPastes(ModelBuilder modelBuilder)
+    {
         modelBuilder.Entity<Paste>().HasData(
             new Paste("This is the first seeded paste.", DateTime.MaxValue),
             new Paste("This is the second seeded paste.", DateTime.MaxValue)
         );
-
-        base.OnModelCreating(modelBuilder);
     }
 }

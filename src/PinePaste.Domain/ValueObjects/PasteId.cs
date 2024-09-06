@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace PinePaste.Domain.ValueObjects;
@@ -7,21 +6,16 @@ namespace PinePaste.Domain.ValueObjects;
 public class PasteId
 {
     private static readonly Random Random = new();
+
     private const string Characters = "abcdefghijklmnopqrstuvwxyz0123456789";
     private const int Length = 4;
-
-    public string Value { get; }
-
-    // Private parameterless constructor for EF Core
-    private PasteId()
-    {
-        Value = null!;
-    }
 
     private PasteId(string value)
     {
         Value = value;
     }
+
+    public string Value { get; }
 
     public static PasteId New()
     {
@@ -46,17 +40,13 @@ public class PasteId
 
     public static bool TryParse(string input, out PasteId pasteId)
     {
-        // First, initialize the out parameter
         pasteId = null!;
 
-        // Validate the input string
         if (string.IsNullOrWhiteSpace(input) || !IsValid(input))
-        {
             return false;
-        }
 
-        // If the input is valid, assign a new PasteId and return true
         pasteId = new PasteId(input);
+        
         return true;
     }
 
