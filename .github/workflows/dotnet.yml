@@ -20,12 +20,12 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore PinePaste.sln
-      working-directory: ./pinepaste
+      working-directory: .
 
     - name: Build
       run: dotnet build PinePaste.sln --no-restore
-      working-directory: ./pinepaste
+      working-directory: .
 
     - name: Test
       run: dotnet test PinePaste.sln --no-build --verbosity normal
-      working-directory: ./pinepaste
+      working-directory: .
