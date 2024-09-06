@@ -25,9 +25,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore PinePaste.sln
-      working-directory: ./pinepaste
+      run: dotnet restore
 
     - name: Build the project
-      run: dotnet build PinePaste.sln --configuration Release
-      working-directory: ./pinepaste
+      run: dotnet build --configuration Release
